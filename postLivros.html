@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/post.js" defer></script>
+    <title>Cadastro de Livros</title>
+</head>
+<body>
+    <h1>Cadastrar Livros</h1>
+
+    <fieldset>
+        <legend>Cadastro de livros</legend>
+        <form id="postLivrosForm">
+            <div>
+                <label for="nome">Nome do livro: </label>
+                <input type="text" name="nome" id="nomeLivro"
+                required >
+            </div>
+            <div>
+                <label for="preco">Digite o preço do livro: </label>
+                <input type="number" name="preco" id="precoLivro"
+                required>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </fieldset>
+
+    <div id="livrosPostados"> </div>
+    
+</body>
+</html>
