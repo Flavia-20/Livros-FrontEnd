@@ -15,12 +15,10 @@ async function getAllLivros(){
     dados.map((livro)=>{
       
         const option = document.createElement('option')
-        const categoria = document.createElement('div')
         const nome = document.createElement('h2')
         const preco = document.createElement('p')
         const data = document.createElement('p')
 
-        categoria.innerHTML = livro.categoriaEntity;
         nome.innerHTML = livro.nome;
         preco.innerHTML = livro.preco;
         data.innerHTML = livro.creatAt;
