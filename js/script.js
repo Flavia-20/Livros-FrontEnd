@@ -27,9 +27,6 @@ async function getAllLivros(){
             //codigoCategoria.innerHTML = livro.categoriaEntity.codigoCategoria;
             nomeCategoria.innerHTML = `Nome da categoria: ${livro.categoriaEntity.nomeCategoria}`;
         
-           /* const codigoCategoria = livro.categoriaEntity.codigoCategoria;
-            const nomeCategoria = livro.categoriaEntity.nomeCategoria;
-            categoria.textContent = `Categoria: ${nomeCategoria} (Código: ${codigoCategoria})`;*/
 
             div.appendChild(nome);
             div.appendChild(preco);
