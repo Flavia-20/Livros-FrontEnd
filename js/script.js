@@ -5,32 +5,44 @@ const url = "https://livrosapi.azurewebsites.net/livros"
 const livrosContainer = document.querySelector("#livrosContainer");
 
 async function getAllLivros(){
-    const response = await fetch(url);
-
-    console.log(response);
-
- const dados = await response.json();
-    console.log(dados)
-
-    dados.map((livro)=>{
-      
-        const option = document.createElement('option')
-        const nome = document.createElement('h2')
-        const preco = document.createElement('p')
-        const data = document.createElement('p')
-
-        nome.innerHTML = livro.nome;
-        preco.innerHTML = livro.preco;
-        data.innerHTML = livro.creatAt;
-
-        option.appendChild(nome);
-        option.appendChild(preco);
-        option.appendChild(data);
-
+    try{
+        const response = await fetch(url);
+        console.log(response);
     
-        livrosContainer.appendChild(option);
+        const dados = await response.json();
+        console.log(dados)
+    
+        dados.forEach((livro)=>{
+          
+            const div= document.createElement('div');
+            const nome = document.createElement('h2');
+            const preco = document.createElement('p');
+            const data = document.createElement('p');
+            //const codigoCategoria = document.createElement('p');
+            const nomeCategoria = document.createElement('p');
+    
+            nome.innerHTML = livro.nome;
+            preco.innerHTML = `Preço: R$ ${livro.preco}`;
+            data.innerHTML = `Data de criação: ${livro.creatAt}`;
+            //codigoCategoria.innerHTML = livro.categoriaEntity.codigoCategoria;
+            nomeCategoria.innerHTML = `Nome da categoria: ${livro.categoriaEntity.nomeCategoria}`;
         
-    });
+           /* const codigoCategoria = livro.categoriaEntity.codigoCategoria;
+            const nomeCategoria = livro.categoriaEntity.nomeCategoria;
+            categoria.textContent = `Categoria: ${nomeCategoria} (Código: ${codigoCategoria})`;*/
+
+            div.appendChild(nome);
+            div.appendChild(preco);
+            div.appendChild(data);
+            //div.appendChild(codigoCategoria);
+            div.appendChild(nomeCategoria);
+    
+            livrosContainer.appendChild(div);
+        });
+
+    } catch (error) {
+        console.error('Erro:', error.message);
+    }
 }
 
 getAllLivros()
