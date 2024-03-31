@@ -8,11 +8,33 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Livros API</title>
     <script src="js/script.js" defer></script>
+    <style>
+        a{
+            list-style: none;
+            color: white;
+        }
+
+        h1{
+            margin: 5%;
+            text-align: center;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            border: red solid 2px;
+        }
+        button{
+            margin: 2%;
+        }
+    </style>
 </head>
 <body>
     <h1>Teste</h1>
 
-    <button ><a href="../Teste-FrontEnd/postLivros.html">Cadastrar Livro</a></button>
+    <button type="submit" class="btn btn-primary mb-3">
+        <a href="../Teste-FrontEnd/html/postLivros.html">Cadastrar Livro</a></button>
+
 
     <div id="livrosContainer"></div>
 

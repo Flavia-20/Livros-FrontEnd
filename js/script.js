@@ -18,23 +18,20 @@ async function getAllLivros(){
             const nome = document.createElement('h2');
             const preco = document.createElement('p');
             const data = document.createElement('p');
-            //const codigoCategoria = document.createElement('p');
             const nomeCategoria = document.createElement('p');
     
             nome.innerHTML = livro.nome;
             preco.innerHTML = `Preço: R$ ${livro.preco}`;
             data.innerHTML = `Data de criação: ${livro.creatAt}`;
-            //codigoCategoria.innerHTML = livro.categoriaEntity.codigoCategoria;
             nomeCategoria.innerHTML = `Nome da categoria: ${livro.categoriaEntity.nomeCategoria}`;
         
-
             div.appendChild(nome);
             div.appendChild(preco);
             div.appendChild(data);
-            //div.appendChild(codigoCategoria);
             div.appendChild(nomeCategoria);
-    
+
             livrosContainer.appendChild(div);
+
         });
 
     } catch (error) {
