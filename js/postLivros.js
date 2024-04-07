@@ -4,28 +4,28 @@ const url = "https://livrosapi.azurewebsites.net/livros";
 const postLivrosForm = document.querySelector('#postLivrosForm');
 const nomeInput = document.querySelector('#nomeLivro');
 const precoInput = document.querySelector('#precoLivro');
-const categoriaLivro = document.querySelector('#categoriaLivro');
+const categoriaInput = document.querySelector('#categoriaLivro');
 
 const livrosPostados = document.querySelector("#livrosPostados");
 
 function cadastroLivros(livro) {
     /*criando as tags*/
     const div = document.createElement('div');
-    const nome = document.createElement('h3');
-    const preco = document.createElement('p');
-    const categoria = document.createElement('p');
+    const nomeLivro = document.createElement('h3');
+    const precoLivro = document.createElement('p');
+    //const categoriaLivro = document.createElement('p');
     const codigoCategoria = document.createElement('p');
    
     /* preenchendo as tags*/
-    nome.innerHTML = `Nome do livro: ${livro.nome}`;
-    preco.innerHTML = `Preço: ${livro.preco}`;
-    categoria.innerHTML = `Categoria: ${livro.categoriaEntity.nomeCategoria}`;
-    codigoCategoria.innerHTML = livro.categoriaEntity.codigoCategoria;
+    nomeLivro.innerHTML = `Nome do livro: ${livro.nome}`;
+    precoLivro.innerHTML = `Preço: ${livro.preco}`;
+    //categoriaLivro.innerHTML = `Categoria: ${livro.categoria}`;
+    codigoCategoria.innerHTML = livro.codigo;
 
     /*aninhando as tags */
-    div.appendChild(nome);
-    div.appendChild(preco);
-    div.appendChild(categoria);
+    div.appendChild(nomeLivro);
+    div.appendChild(precoLivro);
+    //div.appendChild(categoriaLivro);
     div.appendChild(codigoCategoria);
     livrosPostados.appendChild(div);
 }
@@ -55,8 +55,9 @@ postLivrosForm.addEventListener("submit", (e) => {
 
     let cadastro = {
         nome: nomeInput.value,
+        categoria: categoriaInput.value,
         preco: precoInput.value,
-        categoria: categoriaLivro.value,
+       
     };
 
     console.log(cadastro);

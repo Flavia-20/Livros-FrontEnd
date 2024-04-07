@@ -18,17 +18,17 @@ async function getAllLivros(){
             const nome = document.createElement('h2');
             const preco = document.createElement('p');
             const data = document.createElement('p');
-            const nomeCategoria = document.createElement('p');
+            //const nomeCategoria = document.createElement('p');
     
             nome.innerHTML = livro.nome;
             preco.innerHTML = `Preço: R$ ${livro.preco}`;
             data.innerHTML = `Data de criação: ${livro.creatAt}`;
-            nomeCategoria.innerHTML = `Nome da categoria: ${livro.categoriaEntity.nomeCategoria}`;
+          //  nomeCategoria.innerHTML = `Nome da categoria: ${livro.nome}`;
         
             div.appendChild(nome);
             div.appendChild(preco);
             div.appendChild(data);
-            div.appendChild(nomeCategoria);
+            //div.appendChild(nomeCategoria);
 
             livrosContainer.appendChild(div);
 

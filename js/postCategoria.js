@@ -24,7 +24,7 @@ async function postCategoria(categoria) {
                 "Content-Type": "application/json",   
             },
         });
-        const data = await response.text();
+        const data = await response.json();
         console.log(data)
         console.log("Categoria cadastrada com sucesso:", data);
         cadastroCategoria(data);
