@@ -24,13 +24,17 @@ async function getAllLivros(){
             preco.innerHTML = `Preço: R$ ${livro.preco}`;
             data.innerHTML = `Data de criação: ${livro.creatAt}`;
           //  nomeCategoria.innerHTML = `Nome da categoria: ${livro.nome}`;
-        
+            
+
+
             div.appendChild(nome);
             div.appendChild(preco);
             div.appendChild(data);
             //div.appendChild(nomeCategoria);
 
+            div.className="card";
             livrosContainer.appendChild(div);
+
 
         });
 

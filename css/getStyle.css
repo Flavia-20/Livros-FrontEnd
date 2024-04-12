@@ -1,0 +1,28 @@
+a{
+    list-style: none;
+    color: white;
+}
+
+h1{
+    margin: 5%;
+    text-align: center;
+}
+button{
+    margin: 2%;
+}
+
+
+#livrosContainer{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+
+.card{
+    /*border: green solid 2px;*/
+    width: 250px;
+    height: 150px;
+    box-shadow: 6px 5px 15px;
+}

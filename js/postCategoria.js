@@ -15,8 +15,18 @@ function cadastroCategoria(categoriaLivro) {
 
     categoriaCadastrada.appendChild(div);   
 }
+
+function mensageErro(dataErro){
+    const div = document.createElement('div');
+    const responseErro = document.createElement('p');
+
+    responseErro .innerHTML = dataErro;
+
+    div.appendChild(responseErro);
+
+    categoriaCadastrada.appendChild(div);   
+}
 async function postCategoria(categoria) {
-    try {
         const response = await fetch(url,{
             method: "POST",
             body: categoria,
@@ -25,15 +35,13 @@ async function postCategoria(categoria) {
             },
         });
         const data = await response.json();
-        console.log(data)
-        console.log("Categoria cadastrada com sucesso:", data);
-        cadastroCategoria(data);
-        return data; 
-    } catch (error) {
-        console.error('Erro ao cadastrar categoria:', error.message);
-        throw error;
-    }
-} 
+        console.log(data);
+        if(response.status != 400)
+            cadastroCategoria(data);
+        else{
+            mensageErro(data);
+        }
+}
 
 /*adicionando evento no botão para cadastrar a nova categoria */
 cadastrarForm.addEventListener("submit", (e) => {
