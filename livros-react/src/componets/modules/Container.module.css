@@ -1,0 +1,15 @@
+
+
+
+.divContainer{
+   border: red solid 2px;
+   background-color: white;
+   height: 65vh;
+   width: 50vw;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   
+}
+
